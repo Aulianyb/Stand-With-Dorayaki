@@ -5,12 +5,23 @@ import './App.css'
 
 function Dashboard() {
   return (<>
-    <div className='Dashboard'>
+    <div className='dashboard'>
       <div>
-        <a>Home</a>
+        <div className='dashboard-content'><a>Link</a></div>
+        <div className='web-name'>Stand With Dorayaki</div>
       </div>
     </div>
   </>); 
+}
+
+function Banner(){
+  return (
+    <>
+      <div>
+        <img src='src/assets/Banner Temp.jpg' className='banner'></img>
+      </div>
+    </>
+  );
 }
 
 function App() {
@@ -19,6 +30,7 @@ function App() {
   return (
     <>
       <Dashboard />
+      <Banner />
     </>
   )
 }
