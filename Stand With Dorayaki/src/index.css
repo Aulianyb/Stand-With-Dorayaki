@@ -1,5 +1,8 @@
-
+/* TO DO : CSSnya masih ada di dalem satu file, mungkin ntar dipisah */
 :root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
   font-family: Lexend;
   line-height: 1.5;
   font-weight: 400;
@@ -13,6 +16,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+img {
+  width: 200px;
 }
 
 a {
@@ -102,4 +109,13 @@ how :)
 
 .menu-box p{
   margin: 0px;
+}
+
+.circle {
+  background-color: #E4F1FF;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position : absolute;
+  left: 25%;
 }
