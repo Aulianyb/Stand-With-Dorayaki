@@ -82,6 +82,7 @@ how :)
   right: 10px;
 }
 
+/*TODO : Ganti Nama jadi Container aja, ini dipake dimana mana */
 .menu-container{
   margin: 10px 20px 20px 20px;
   display: table;
@@ -113,9 +114,38 @@ how :)
 
 .circle {
   background-color: #E4F1FF;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 500px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50% 50%;
   position : absolute;
-  left: 25%;
+  top : -50%; 
+  left:0; 
+  right:0; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  position: relative;
+  margin: 0px 0px 125px 0px; 
+  font-size: 50px;
+}
+
+h2 {
+  position: relative;
+  font-weight: 100;
+  margin: 50px 0px 0px 0px; 
+}
+
+.container{
+  margin-top: 100px;
+
+}
+
+.store-box{
+  border: solid #002E73 2px;
+  border-radius: 10px;
+  margin : 10px; 
+  width: 250px;
+  display: inline-table;
 }

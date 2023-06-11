@@ -1,5 +1,7 @@
 import bannerImage from '../assets/Banner Temp.jpg';
 import menuPic from '../assets/Dorayaki.jpeg';
+import { Link } from "react-router-dom"; 
+
 
 function Dashboard() {
     return (<>
@@ -8,6 +10,7 @@ function Dashboard() {
           <div className='dashboard-content'>
           {/* TO DO 
           Navigation Bar? Maybe? Or Maybe not lmao*/}
+          <Link to={'/'} className="nav"> Home </Link>
           </div>
           <div className='web-name'>StandWithDorayaki</div>
         </div>
