@@ -15,6 +15,9 @@ function StoreBox() {
     <>
         <div className="store-box">
             <Link to={'menu/1'} className="nav"> STORE NAME </Link>
+            <p className="store-description">Jalan</p>
+            <p className="store-description">Kecamatan</p>
+            <p className="store-description">Provinsi</p>
         </div>
     </>
    ); 

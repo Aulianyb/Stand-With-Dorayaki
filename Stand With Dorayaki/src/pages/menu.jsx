@@ -10,7 +10,7 @@ function Dashboard() {
           <div className='dashboard-content'>
           {/* TO DO 
           Navigation Bar? Maybe? Or Maybe not lmao*/}
-          <Link to={'/'} className="nav"> Home </Link>
+          <Link to={'/'} className="store-link"> Home </Link>
           </div>
           <div className='web-name'>StandWithDorayaki</div>
         </div>
