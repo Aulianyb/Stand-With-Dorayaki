@@ -21,7 +21,7 @@ connection.once('open', () => {
 const menuRouter = require('./routes/menu');
 const storeRouter = require('./routes/store');
 
-app.use('/', storeRouter);
+app.use('/store', storeRouter);
 app.use('/menu', menuRouter); 
 
 app.listen(port, ()=> {
