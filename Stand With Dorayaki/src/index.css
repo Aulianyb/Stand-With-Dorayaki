@@ -4,10 +4,9 @@
 
 :root {
   max-width: 1280px !important;
-  margin: 0 auto !important;
+  margin: 0 auto;
   text-align: center !important;
-  line-height: 1.5 !important;
-  font-weight: 400 !important;
+  font-weight: 400;
   color-scheme: light dark !important;
   background-color: #ffffff !important;
   font-synthesis: none !important;
@@ -132,18 +131,22 @@ how :)
   right:0; 
   margin-left: auto;
   margin-right: auto;
+  z-index: 1;
 }
 
 h1 {
-  position: relative ;
-  margin: 0px 0px 125px 0px; 
+  position: relative;
+  margin: 0px 0px 10px 0px; 
   font-size: 50px;
+  font-weight: 1000;
+  z-index: 2;
 }
 
 h2 {
-  position: relative !important;
+  position: relative;
   font-weight: 100;
   margin: 50px 0px 0px 0px; 
+  z-index: 2;
 }
 
 .container{
@@ -165,6 +168,20 @@ h2 {
 }
 
 .nav {
+  display: block;
   font-size: 25px;
   font-weight: 1000 !important;
+}
+
+.btn-custom{
+  background-color: #002E73;
+  border: 0px;
+  margin: 5px 10px 20px 10px;
+  position: relative;
+  z-index: 3;
+}
+
+.btn-custom:hover{
+  background-color: #0043a8;
+  scale: 1.1;
 }

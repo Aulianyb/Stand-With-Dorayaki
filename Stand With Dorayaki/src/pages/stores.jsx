@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";   
 
 function Title(){
    return(
@@ -13,7 +13,7 @@ function Title(){
 function StoreBox() {
    return(
     <>
-        <div className="store-box">
+        <div className="store-box" >
             <Link to={'store/1'} className="nav"> StoreName </Link>
             <p className="store-description">Jalan</p>
             <p className="store-description">Kecamatan</p>
@@ -26,6 +26,14 @@ function StoreBox() {
 export default function Stores(){
     return(<>
     <Title />
+    <div >
+        <Link to={'/AddStore'}>
+            <button type="button" class="btn btn-primary btn-custom">Add the Store</button>
+        </Link>
+        <Link to={'/DeleteStore'}>
+            <button type="button" class="btn btn-primary btn-custom">Delete Store</button>
+        </Link>
+    </div>
     <div className="menu-container">
         <StoreBox />
         <StoreBox />
