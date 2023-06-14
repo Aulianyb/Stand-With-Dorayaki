@@ -14,7 +14,7 @@ function StoreBox() {
    return(
     <>
         <div className="store-box">
-            <Link to={'menu/1'} className="nav"> STORE NAME </Link>
+            <Link to={'store/1'} className="nav"> StoreName </Link>
             <p className="store-description">Jalan</p>
             <p className="store-description">Kecamatan</p>
             <p className="store-description">Provinsi</p>

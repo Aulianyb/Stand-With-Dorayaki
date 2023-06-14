@@ -1,3 +1,6 @@
+// ---> NOTICE!!
+// MUNGKIN GAK DIPAKE :)
+// INI TESTING AJA SOALNYA AKU GATAU APAKAH LEBIH BAIK NESTED ATAU GAK
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema; 

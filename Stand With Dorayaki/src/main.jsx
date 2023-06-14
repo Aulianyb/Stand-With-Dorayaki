@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 // import App from './App.jsx'
+import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css'
-// import 'bootstrap/dist/css/bootstrap.css';
 
 import {
   createBrowserRouter, 
@@ -12,6 +12,8 @@ import Stores from './pages/stores.jsx';
 import ErrorPage from './error-page.jsx';
 import Menu from './pages/menu.jsx';
 
+
+
 const router = createBrowserRouter([
   {
    path : "/",
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "menu/:contactId",
+    path: "store/:contactId",
     element: <Menu />
   },
 ]);

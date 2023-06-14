@@ -1,34 +1,39 @@
 /* TO DO : CSSnya masih ada di dalem satu file, mungkin ntar dipisah */
+/* Gapake Bootstrap, karena bodoh harusnya dari awal pakenya dan bootstrapnya nge override ini :) */
+/* Agak berantakan tapi gapapa ya */
+
 :root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  color-scheme: light dark !important;
+  background-color: #ffffff !important;
+  font-synthesis: none !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-text-size-adjust: 100% !important;
+}
+
+* {
   font-family: Lexend;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
   color: #002E73;
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
 }
 
 img {
-  width: 200px;
+  width: 200px ;
 }
 
 a {
   font-weight: 500;
-  color: #002E73;
-  text-decoration: inherit;
+  color: #002E73 !important;
+  text-decoration: inherit !important;
 }
 a:hover {
-  font-weight: 1000;
+  font-weight: 1000 !important;
 }
 
 body {
@@ -82,6 +87,10 @@ how :)
   right: 10px;
 }
 
+.store-link{
+  margin-right: 15px;
+}
+
 /*TODO : Ganti Nama jadi Container aja, ini dipake dimana mana */
 .menu-container{
   margin: 10px 20px 20px 20px;
@@ -126,13 +135,13 @@ how :)
 }
 
 h1 {
-  position: relative;
+  position: relative ;
   margin: 0px 0px 125px 0px; 
   font-size: 50px;
 }
 
 h2 {
-  position: relative;
+  position: relative !important;
   font-weight: 100;
   margin: 50px 0px 0px 0px; 
 }
@@ -157,5 +166,5 @@ h2 {
 
 .nav {
   font-size: 25px;
-  font-weight: 1000;
+  font-weight: 1000 !important;
 }

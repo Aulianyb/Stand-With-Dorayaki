@@ -12,8 +12,9 @@ router.route('/add').post((req, res) => {
     const jalan = req.body.jalan;
     const kecamatan = req.body.kecamatan; 
     const provinsi = req.body.provinsi; 
+    const stok = req.body.stok; 
 
-    const newStore = new Store({nama, jalan, kecamatan, provinsi}); 
+    const newStore = new Store({nama, jalan, kecamatan, provinsi, stok}); 
 
     newStore.save()
         .then(() => res.json('Store added!'))
@@ -39,6 +40,7 @@ router.route('/update/:id').post((req, res) =>{
             store.jalan = req.body.jalan;
             store.kecamatan = req.body.kecamatan;
             store.provinsi = req.body.provinsi;
+            store.stok = req.body.stok; 
 
             store.save()
                 .then(() => res.json('Store Updated!'))

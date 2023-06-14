@@ -8,9 +8,9 @@ function Dashboard() {
       <div className='dashboard'>
         <div>
           <div className='dashboard-content'>
-          {/* TO DO 
-          Navigation Bar? Maybe? Or Maybe not lmao*/}
           <Link to={'/'} className="store-link"> Home </Link>
+          <Link to={'/AddMenu'} className="store-link"> Add Rasa </Link>
+          <Link to={'/UpdateStok'} className="store-link"> Update Stok </Link>
           </div>
           <div className='web-name'>StandWithDorayaki</div>
         </div>
