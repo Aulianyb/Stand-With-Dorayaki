@@ -20,9 +20,11 @@ connection.once('open', () => {
 
 const menuRouter = require('./routes/menu');
 const storeRouter = require('./routes/store');
+const resepRouter = require('./routes/resep');
 
 app.use('/store', storeRouter);
 app.use('/menu', menuRouter); 
+app.use('/resep', resepRouter); 
 
 app.listen(port, ()=> {
     console.log(`Server is running on port: ${port}`); 

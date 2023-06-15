@@ -12,14 +12,6 @@ const storeSchema = new Schema(
         jalan : {type : String, required: true, trim: true},
         kecamatan :  {type : String, required: true, trim: true}, 
         provinsi : {type : String, required : true, trim : true},
-        stok : {
-            type: [{
-                rasa: String,
-                deskripsi:String,
-                jumlah: Number,
-            }],
-            default: [],
-        },
     }, {
         timestamps: true,
     }

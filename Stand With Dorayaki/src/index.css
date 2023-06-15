@@ -185,3 +185,9 @@ h2 {
   background-color: #0043a8;
   scale: 1.1;
 }
+
+.form-header{
+  background-color: #E4F1FF;
+  padding: 5px;
+  margin-bottom: 30px;
+}

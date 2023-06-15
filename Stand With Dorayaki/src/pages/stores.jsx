@@ -28,10 +28,7 @@ export default function Stores(){
     <Title />
     <div >
         <Link to={'/AddStore'}>
-            <button type="button" class="btn btn-primary btn-custom">Add the Store</button>
-        </Link>
-        <Link to={'/DeleteStore'}>
-            <button type="button" class="btn btn-primary btn-custom">Delete Store</button>
+            <button type="button" class="btn btn-primary btn-custom">Add Store</button>
         </Link>
     </div>
     <div className="menu-container">

@@ -9,8 +9,7 @@ function Dashboard() {
         <div>
           <div className='dashboard-content'>
           <Link to={'/'} className="store-link"> Home </Link>
-          <Link to={'/AddMenu'} className="store-link"> Add Rasa </Link>
-          <Link to={'/UpdateStok'} className="store-link"> Update Stok </Link>
+          <Link to={'/AddRasa'} className="store-link"> Add Rasa </Link>
           </div>
           <div className='web-name'>StandWithDorayaki</div>
         </div>

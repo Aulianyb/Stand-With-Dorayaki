@@ -11,18 +11,26 @@ import {
 import Stores from './pages/stores.jsx';
 import ErrorPage from './error-page.jsx';
 import Menu from './pages/menu.jsx';
-
-
+import AddStore from './pages/addStore.jsx';
+import AddRasa from './pages/addRasa'; 
 
 const router = createBrowserRouter([
   {
-   path : "/",
-   element :  <Stores />,
+  path : "/",
+    element :  <Stores />,
     errorElement: <ErrorPage />,
   },
   {
     path: "store/:contactId",
     element: <Menu />
+  },
+  {
+    path: "AddStore",
+    element: <AddStore />
+  },
+  {
+    path: "AddRasa",
+    element: <AddRasa />
   },
 ]);
 

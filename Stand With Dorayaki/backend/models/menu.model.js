@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 const menuSchema = new Schema({
-    rasa : { type: String, required: true},
-    deskripsi : { type: String, required: true},
-    // TO DO : Add Gambar ntar
+    storeID : { type: Number, required: true},
+    resepID : { type: Number, required: true},
+    stock : {type: Number, required: true},
 }, {
     timestamps: true, 
 }); 

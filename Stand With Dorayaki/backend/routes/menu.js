@@ -8,13 +8,14 @@ router.route('/').get((req, res) => {
 }); 
 
 router.route('/add').post((req, res) => {
-    const rasa = req.body.rasa; 
-    const deskripsi = req.body.deskripsi; 
+    const storeID = req.body.storeID; 
+    const resepID = req.body.resepID; 
+    const stock = req.body.stock; 
 
-    const newMenu = new Menu({rasa, deskripsi}); 
+    const newMenu = new Menu({storeID, resepID, stock}); 
 
     newMenu.save()
-        .then(() => res.json('Menu added!'))
+        .then(() => res.json('Stock added!'))
         .catch(err => res.status(400).json('Error: ' + err)); 
 }); 
 
@@ -26,7 +27,7 @@ router.route('/:id').get((req, res) => {
 
 router.route('/:id').delete((req, res) => {
     Menu.findByIdAndDelete(req.params.id)
-        .then(() => res.json("menu deleted"))
+        .then(() => res.json("stock deleted"))
         .catch(err=> res.status(400).json('Error: ' + err)); 
 });
 
@@ -42,5 +43,7 @@ router.route('/update/:id').post((req, res) =>{
         })
         .catch(err => res.status(400).json('Error: ' + err)); 
 }); 
+
+router.route('')
 
 module.exports = router; 
