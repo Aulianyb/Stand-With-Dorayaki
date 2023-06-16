@@ -1,5 +1,7 @@
 import { useState } from "react";
 import FormHeader from "./components/formHeader"; 
+import axios from 'axios'; 
+import { v4 as uuidv4 } from "uuid"; 
 
 export default function AddStore(){
     const [nama, setNama] = useState("");
@@ -26,6 +28,7 @@ export default function AddStore(){
     function onSubmit(e) {
         e.preventDefault(); 
         const store = {
+            storeID : uuidv4(), 
             nama : nama, 
             jalan : jalan,
             kecamatan : kecamatan, 
@@ -33,6 +36,8 @@ export default function AddStore(){
         }
 
         console.log(store); 
+        axios.post('http://localhost:5000/store/add', store)
+            .then(res => console.log(res.data)); 
 
         setNama(''); 
         setJalan(''); 

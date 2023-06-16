@@ -28,7 +28,7 @@ img {
 
 a {
   font-weight: 500;
-  color: #002E73 !important;
+  color: #002E73;
   text-decoration: inherit !important;
 }
 a:hover {
@@ -76,6 +76,16 @@ how :)
   /* -webkit-filter: blur(3px); */
 } 
 
+.store-head{
+  background-color: #002E73;
+  text-align:right;
+  padding: 5px 10px 5px 0px;
+  border-radius: 5px;
+}
+
+.store-head a{
+  color: #ffffff;
+}
 
 .store-name{
   color:#ffffff;
@@ -191,3 +201,4 @@ h2 {
   padding: 5px;
   margin-bottom: 30px;
 }
+

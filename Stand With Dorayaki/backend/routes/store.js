@@ -8,12 +8,13 @@ router.route('/').get((req, res) => {
 }); 
 
 router.route('/add').post((req, res) => {
+    const storeID = req.body.storeID; 
     const nama = req.body.nama; 
     const jalan = req.body.jalan;
     const kecamatan = req.body.kecamatan; 
     const provinsi = req.body.provinsi; 
 
-    const newStore = new Store({nama, jalan, kecamatan, provinsi}); 
+    const newStore = new Store({storeID, nama, jalan, kecamatan, provinsi}); 
 
     newStore.save()
         .then(() => res.json('Store added!'))

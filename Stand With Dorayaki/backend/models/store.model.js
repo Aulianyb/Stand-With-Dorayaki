@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 
 const storeSchema = new Schema(
     {
+        storeID : {type: String, require: true}, 
         nama: { type: String, required: true, unique: true, trim: true, }, 
         jalan : {type : String, required: true, trim: true},
         kecamatan :  {type : String, required: true, trim: true}, 

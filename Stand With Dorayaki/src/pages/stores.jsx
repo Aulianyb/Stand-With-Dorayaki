@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";   
+import axios from 'axios'; 
+import React, { useState, useEffect} from 'react'; 
 
 function Title(){
    return(
@@ -10,20 +12,49 @@ function Title(){
    ); 
 }
 
-function StoreBox() {
+function StoreBox(props) {
    return(
     <>
         <div className="store-box" >
-            <Link to={'store/1'} className="nav"> StoreName </Link>
-            <p className="store-description">Jalan</p>
-            <p className="store-description">Kecamatan</p>
-            <p className="store-description">Provinsi</p>
+            <div className="store-head">
+                <Link>X</Link>
+            </div>
+            <Link to={'store/' + props.store._id} className="nav">{props.store.nama}</Link>
+            <p className="store-description">{props.store.jalan}</p>
+            <p className="store-description">{props.store.kecamatan}</p>
+            <p className="store-description">{props.store.provinsi}</p>
         </div>
     </>
    ); 
 }
 
-export default function Stores(){
+export default function Stores() {
+    const [stores,  setStores] = useState([]); 
+
+    function componentDidMount() {
+        axios.get('http://localhost:5000/store/')
+            .then(response => {
+                setStores(response.data); 
+            })
+            .catch((error)=>{
+                console.log(error); 
+            })
+    }
+
+    useEffect(() => {
+        componentDidMount(); 
+    }, [stores]); 
+
+    function deleteStore(id) {
+
+    }
+
+    function storeList(){
+        return stores.map(currentStore => {
+            return <StoreBox store={currentStore}/>
+        })
+    }
+
     return(<>
     <Title />
     <div >
@@ -32,9 +63,7 @@ export default function Stores(){
         </Link>
     </div>
     <div className="menu-container">
-        <StoreBox />
-        <StoreBox />
-        <StoreBox />
+        {storeList()}
     </div>
     </>);
 }
