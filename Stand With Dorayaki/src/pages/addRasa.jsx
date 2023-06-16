@@ -30,7 +30,7 @@ export default function AddRasa(){
 
         setRasa(''); 
         setDeskripsi(''); 
-        window.location = "store:id"; 
+        window.location = "/"; 
     }
 
     return (<>

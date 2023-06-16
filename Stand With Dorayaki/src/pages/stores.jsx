@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";   
+import { Link, Route } from "react-router-dom";   
 import axios from 'axios'; 
 import React, { useState, useEffect} from 'react'; 
 
 function Title(){
    return(
     <>
-        <div class="circle"></div>
+        <div className="circle"></div>
         <h2>Selamat Datang di</h2>
         <h1>StandWithDorayaki</h1>
     </>
@@ -17,9 +17,10 @@ function StoreBox(props) {
     <>
         <div className="store-box" >
             <div className="store-head">
-                <Link>X</Link>
+                <a onClick={() => props.deleteStore(props.store._id)}>X</a>
             </div>
-            <Link to={'store/' + props.store._id} className="nav">{props.store.nama}</Link>
+            <Link to={`store/` + props.store.storeID} 
+            className="nav">{props.store.nama}</Link>
             <p className="store-description">{props.store.jalan}</p>
             <p className="store-description">{props.store.kecamatan}</p>
             <p className="store-description">{props.store.provinsi}</p>
@@ -34,7 +35,7 @@ export default function Stores() {
     function componentDidMount() {
         axios.get('http://localhost:5000/store/')
             .then(response => {
-                setStores(response.data); 
+                setStores(response.data);
             })
             .catch((error)=>{
                 console.log(error); 
@@ -43,15 +44,20 @@ export default function Stores() {
 
     useEffect(() => {
         componentDidMount(); 
-    }, [stores]); 
+    }, []); 
 
     function deleteStore(id) {
-
+        if (window.confirm("You Sure?")){
+            axios.delete('http://localhost:5000/store/' + id)
+            .then(response => {console.log(response.data)}); 
+        
+            setStores(stores.filter(el => el._id !== id))
+        }
     }
 
     function storeList(){
         return stores.map(currentStore => {
-            return <StoreBox store={currentStore}/>
+            return <StoreBox store={currentStore} deleteStore={deleteStore.bind(this)} key={currentStore._id}/>
         })
     }
 
@@ -59,7 +65,7 @@ export default function Stores() {
     <Title />
     <div >
         <Link to={'/AddStore'}>
-            <button type="button" class="btn btn-primary btn-custom">Add Store</button>
+            <button type="button" className="btn btn-primary btn-custom">Add Store</button>
         </Link>
     </div>
     <div className="menu-container">

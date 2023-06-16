@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 const menuSchema = new Schema({
-    storeID : { type: Number, required: true},
-    resepID : { type: Number, required: true},
+    storeID : { type: String, required: true},
+    resepID : { type: String, required: true},
     stock : {type: Number, required: true},
 }, {
     timestamps: true, 

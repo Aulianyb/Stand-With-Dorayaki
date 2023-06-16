@@ -34,11 +34,10 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) =>{
     Menu.findById(req.params.id)
         .then(menu => {
-            menu.rasa = req.body.rasa;
-            menu.deskripsi = req.body.deskripsi;
+            menu.stock = req.body.stock;
 
             menu.save()
-                .then(() => res.json('Menu Updated!'))
+                .then(() => res.json('Stock Updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));  
         })
         .catch(err => res.status(400).json('Error: ' + err)); 
