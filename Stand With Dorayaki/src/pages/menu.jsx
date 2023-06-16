@@ -63,7 +63,7 @@ function Dashboard() {
 
       console.log(update); 
 
-      axios.post(`http://localhost:5000/menu/update/${props._id}`, update)
+      axios.post(`http://localhost:5000/menu/update/${props.menu._id}`, update)
           .then(res => console.log(res.data)); 
 
       set_stock(0); 
@@ -79,7 +79,7 @@ function Dashboard() {
               <form onSubmit={onSubmit}>
                   <div className="form-group">
                       <label>Jumlah Stock</label>
-                      <input type="number" id="number"
+                      <input type="number" min="0" id="number"
                       required 
                       className="form-control"
                       value={_stock}
@@ -112,7 +112,6 @@ export default function Menu(){
   let {storeID} = useParams(); 
   const [stores, setStores] = useState([]); 
   const [menus, setMenus] = useState([]); 
-  let [resep, setResep] = useState([]); 
 
   function componentDidMount() {
     axios.get('http://localhost:5000/store/')
@@ -132,19 +131,11 @@ export default function Menu(){
       .catch((error)=>{
         console.log(error); 
       })
-
-    axios.get('http://localhost:5000/resep/')
-    .then(response =>{
-      setResep(response.data); 
-    })
-    .catch((error)=>{
-      console.log(error); 
-    })
   }
 
   useEffect(() => {
     componentDidMount(); 
-}, []); 
+}, [menus]); 
 
   function renderBanner(){
     return <Banner store={stores}></Banner>
