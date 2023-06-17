@@ -77,7 +77,7 @@ function Dashboard() {
         axios.delete('http://localhost:5000/menu/' + props.menu._id)
         .then(response => {console.log(response.data)}); 
         console.log('delete berhasil'); 
-        // setModalShow(false); 
+        setModalShow(false); 
     }
   }
 
@@ -100,7 +100,7 @@ function Dashboard() {
                       <input type="submit" className="btn btn-primary btn-custom"></input>
                   </div>
               </form>
-              <button type="button" className="btn btn-primary btn-custom" onClick={deleteStock()}>Delete Stock</button>
+              <button type="button" className="btn btn-primary btn-custom" onClick={deleteStock}>Delete Stock</button>
             </div>
           </>
         ); 
