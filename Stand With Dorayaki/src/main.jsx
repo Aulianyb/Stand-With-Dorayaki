@@ -13,6 +13,7 @@ import ErrorPage from './error-page.jsx';
 import Menu from './pages/menu.jsx';
 import AddStore from './pages/addStore.jsx';
 import AddRasa from './pages/addRasa'; 
+import AddStock from './pages/addStock';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "AddRasa",
     element: <AddRasa />
+  },
+  {
+    path: "AddStock/:storeID",
+    element: <AddStock />
   },
 ]);
 

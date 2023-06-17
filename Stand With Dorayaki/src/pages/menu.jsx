@@ -5,12 +5,15 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'; 
 
 function Dashboard() {
+  let {storeID} = useParams(); 
+
     return (<>
       <div className='dashboard'>
         <div>
           <div className='dashboard-content'>
           <Link to={'/'} className="store-link"> Home </Link>
           <Link to={'/AddRasa'} className="store-link"> Add Recipe </Link>
+          <Link to={`/AddStock/` + storeID} className="store-link"> Add Stock </Link>
           </div>
           <div className='web-name'>StandWithDorayaki</div>
         </div>
@@ -32,7 +35,6 @@ function Dashboard() {
   //buat modal aja kaya mau meninggal
   function MenuBox(props){
     let [resep, setResep] = useState([]); 
-    let {storeID} = useParams(); 
 
     const [modalShow, setModalShow] = useState(false); 
     const [_stock, set_stock] = useState(0); 
@@ -70,6 +72,15 @@ function Dashboard() {
       setModalShow(false);
   }
 
+  function deleteStock() {
+    if (window.confirm("You Sure?")){
+        axios.delete('http://localhost:5000/menu/' + props.menu._id)
+        .then(response => {console.log(response.data)}); 
+        console.log('delete berhasil'); 
+        // setModalShow(false); 
+    }
+  }
+
     function renderModal(){
       if (modalShow){
         return (
@@ -89,6 +100,7 @@ function Dashboard() {
                       <input type="submit" className="btn btn-primary btn-custom"></input>
                   </div>
               </form>
+              <button type="button" className="btn btn-primary btn-custom" onClick={deleteStock()}>Delete Stock</button>
             </div>
           </>
         ); 
@@ -98,7 +110,7 @@ function Dashboard() {
         <>
             {renderModal()}
             <div className='menu-box'> 
-              <img src={menuPic} data-toggle="modal" data-target="#exampleModalCenter"></img>
+              <img src={menuPic} data-toggle="modal"></img>
               <p className='menu-title'>{resep.rasa}</p>
               <p>{resep.deskripsi}</p>
               <p>Stock : {props.menu.stock}</p>

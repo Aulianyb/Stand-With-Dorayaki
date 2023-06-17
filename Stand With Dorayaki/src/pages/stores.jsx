@@ -50,7 +50,7 @@ export default function Stores() {
         if (window.confirm("You Sure?")){
             axios.delete('http://localhost:5000/store/' + id)
             .then(response => {console.log(response.data)}); 
-        
+            
             setStores(stores.filter(el => el._id !== id))
         }
     }
