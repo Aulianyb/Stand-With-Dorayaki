@@ -43,6 +43,18 @@ router.route('/update/:id').post((req, res) =>{
         .catch(err => res.status(400).json('Error: ' + err)); 
 }); 
 
+router.route('/transfer/:id').post((req, res)=>{
+    Menu.findById(req.params.id)
+        .then(menu =>{
+            menu.stock = menu.stock - req.body.stock; 
+
+            menu.save()
+            .then(() => res.json('Stock Updated!'))
+            .catch(err => res.status(400).json('Error: ' + err));  
+        })
+    }
+    // Menu.updateMany()
+)
 router.route('')
 
 module.exports = router; 
