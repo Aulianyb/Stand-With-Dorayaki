@@ -37,6 +37,10 @@ const router = createBrowserRouter([
     path: "AddStock/:storeID",
     element: <AddStock />
   },
+  {
+    path: "Transfer/:storeID",
+    element: <AddStock />
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

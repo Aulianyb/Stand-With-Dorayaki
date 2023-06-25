@@ -14,6 +14,7 @@ function Dashboard() {
           <Link to={'/'} className="store-link"> Home </Link>
           <Link to={'/AddRasa'} className="store-link"> Add Recipe </Link>
           <Link to={`/AddStock/` + storeID} className="store-link"> Add Stock </Link>
+          <Link to={`/Transfer/` + storeID} className="store-link"> Transfer </Link>
           </div>
           <div className='web-name'>StandWithDorayaki</div>
         </div>
